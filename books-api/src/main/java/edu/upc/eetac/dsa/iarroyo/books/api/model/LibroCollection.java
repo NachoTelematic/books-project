@@ -16,7 +16,7 @@ import edu.upc.eetac.dsa.iarroyo.books.api.MediaType;
 public class LibroCollection {
 	@InjectLinks({
 		@InjectLink(resource = BookResource.class, style = Style.ABSOLUTE, rel = "create-libros", title = "Create libro", type = MediaType.BOOKS_API_BOOK),
-		@InjectLink(value = "/books/reviews", style = Style.ABSOLUTE, rel = "allReviews", title = "Show all reviews", type = MediaType.BOOKS_API_BOOK),//$-->toda {}--> valor deseado
+		@InjectLink(value = "/books/reviews", style = Style.ABSOLUTE, rel = "reviews", title = "Show all reviews", type = MediaType.BOOKS_API_BOOK),
 		@InjectLink(value = "/books?before={before}", style = Style.ABSOLUTE, rel = "previous", title = "Previous llibros", type = MediaType.BOOKS_API_BOOK_COLLECTION, bindings = { @Binding(name = "before", value = "${instance.oldestTimestamp}") }),//$-->toda {}--> valor deseado
 		@InjectLink(value = "/books?after={after}", style = Style.ABSOLUTE, rel = "current", title = "Newest libros", type = MediaType.BOOKS_API_BOOK_COLLECTION, bindings = { @Binding(name = "after", value = "${instance.newestTimestamp}") }) })
 	private List<Link> links;

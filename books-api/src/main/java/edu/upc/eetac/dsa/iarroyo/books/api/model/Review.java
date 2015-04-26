@@ -1,9 +1,29 @@
 package edu.upc.eetac.dsa.iarroyo.books.api.model;
 
+import java.util.List;
+
+import javax.ws.rs.core.Link;
+
+import org.glassfish.jersey.linking.Binding;
+import org.glassfish.jersey.linking.InjectLink;
+import org.glassfish.jersey.linking.InjectLink.Style;
+import org.glassfish.jersey.linking.InjectLinks;
+
+import edu.upc.eetac.dsa.iarroyo.books.api.MediaType;
+
 public class Review {
 
+	@InjectLinks({
+		@InjectLink(value = "/books/reviews/{libroid}", style = Style.ABSOLUTE, rel = "focus", title = "Reviews Libro", type = MediaType.REVIEWS_API_REVIEW, bindings = { @Binding(name = "libroid", value = "${instance.libroid}") }) })
+	private List<Link> links;
 	
 
+	public List<Link> getLinks() {
+		return links;
+	}
+	public void setLinks(List<Link> links) {
+		this.links = links;
+	}
 	private int reseñaid;
 	private int libroid;
 	private String username;
