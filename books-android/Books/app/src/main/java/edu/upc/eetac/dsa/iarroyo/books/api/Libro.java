@@ -14,6 +14,17 @@ public class Libro {
     private String lengua;
     private String edicion;
 
+    public String geteTag() {
+        return eTag;
+    }
+
+    public void seteTag(String eTag) {
+        this.eTag = eTag;
+    }
+
+    private String eTag;
+
+
     public int getId() {
         return id;
     }
@@ -88,6 +99,16 @@ public class Libro {
 
     private long fecha_edicion;
     private long fecha_impresion;
+
+    public long getLastModified() {
+        return lastModified;
+    }
+
+    public void setLastModified(long lastModified) {
+        this.lastModified = lastModified;
+    }
+
+    private long lastModified;
     private String editorial;
     private List<Review> reviews;
     private Map<String, Link> links = new HashMap<String, Link>();

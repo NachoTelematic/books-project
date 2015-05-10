@@ -53,7 +53,7 @@ public class LibroCollection {
         books = new ArrayList<>();
     }
 
-    public void addSting(Libro book) {
+    public void addBook(Libro book) {
         books.add(book);
     }
 
